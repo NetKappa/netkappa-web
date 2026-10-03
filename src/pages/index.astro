@@ -1,3 +1,4 @@
+
 ---
 import '../styles/global.css';
 ---
@@ -5,20 +6,25 @@ import '../styles/global.css';
 <html lang="el" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>NetKappa | AI Solutions</title>
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#030712" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   </head>
-  <body class="bg-slate-950 text-slate-300 font-sans antialiased selection:bg-purple-500 selection:text-white flex flex-col min-h-screen relative overflow-x-hidden">
+  <body class="bg-slate-950 text-slate-300 font-sans antialiased selection:bg-purple-500 selection:text-white flex flex-col min-h-screen relative overflow-x-hidden pb-20 md:pb-0">
     
     <!-- Ambient Glow Background Effects -->
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-tr from-purple-600/20 to-blue-600/20 blur-[140px] pointer-events-none rounded-full -z-10"></div>
 
-    <!-- Header & Mobile Menu -->
+    <!-- Header (Desktop & Mobile Top Bar) -->
     <header class="fixed w-full top-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800">
-      <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div class="max-w-7xl mx-auto px-6 h-16 md:h-20 flex items-center justify-between">
         
         <a href="/" class="flex items-center">
-          <img src="/netkappa-r-b.png" alt="NetKappa" class="h-10 w-auto" />
+          <img src="/netkappa-r-b.png" alt="NetKappa" class="h-8 md:h-10 w-auto" />
         </a>
         
         <!-- Desktop Navigation -->
@@ -29,126 +35,109 @@ import '../styles/global.css';
         </nav>
 
         <div class="hidden md:flex items-center">
-          <a href="#contact" class="px-6 py-2.5 text-sm font-semibold text-white bg-slate-800 border border-slate-700 rounded-full hover:bg-slate-700 hover:border-slate-600 transition-all">
+          <a href="#solutions" class="px-6 py-2.5 text-sm font-semibold text-white bg-slate-800 border border-slate-700 rounded-full hover:bg-slate-700 hover:border-slate-600 transition-all">
             Επικοινωνία
           </a>
         </div>
-
-        <!-- Mobile Menu Button -->
-        <button id="menu-btn" class="md:hidden text-slate-300 hover:text-white focus:outline-none">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-          </svg>
-        </button>
-      </div>
-
-      <!-- Mobile Dropdown Menu -->
-      <div id="mobile-menu" class="hidden md:hidden bg-slate-900/95 border-b border-slate-800 px-6 py-6 flex flex-col gap-4">
-        <a href="#features" class="text-sm font-medium hover:text-white transition-colors">Χαρακτηριστικά</a>
-        <a href="#solutions" class="text-sm font-medium hover:text-white transition-colors">Λύσεις</a>
-        <a href="#pricing" class="text-sm font-medium hover:text-white transition-colors">Τιμολόγηση</a>
-        <a href="#contact" class="inline-flex justify-center px-6 py-2.5 text-sm font-semibold text-white bg-slate-800 border border-slate-700 rounded-full">
-          Επικοινωνία
-        </a>
       </div>
     </header>
 
     <!-- Main Content -->
-    <main class="flex-grow pt-32">
+    <main class="flex-grow pt-24 md:pt-32">
       
       <!-- Hero Section -->
-      <section class="relative max-w-7xl mx-auto px-6 py-24 text-center flex flex-col items-center">
-        <div class="mb-8 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-sm font-medium">
-          <span class="flex h-2 w-2 rounded-full bg-purple-500"></span>
-          Η νέα εποχή είναι εδώ
+      <section class="relative max-w-7xl mx-auto px-6 py-12 md:py-24 text-center flex flex-col items-center">
+        <div class="mb-6 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs md:text-sm font-medium">
+          <span class="flex h-2 w-2 rounded-full bg-purple-500 animate-pulse"></span>
+          AI App Experience
         </div>
         
-        <h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tight leading-tight mb-8 max-w-4xl">
+        <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white tracking-tight leading-tight mb-6 max-w-4xl">
           Χτίσε το μέλλον με <br/>
           <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-blue-500 to-purple-600">
             Έξυπνες Λύσεις
           </span>
         </h1>
         
-        <p class="text-lg md:text-xl text-slate-400 max-w-2xl mb-12 leading-relaxed">
-          Μια ολοκληρωμένη πλατφόρμα σχεδιασμένη για να απογειώσει την παραγωγικότητά σου. Γρήγορη, ασφαλής και βασισμένη σε τεχνολογίες αιχμής.
+        <p class="text-base md:text-xl text-slate-400 max-w-2xl mb-10 leading-relaxed">
+          Μια ολοκληρωμένη πλατφόρμα σχεδιασμένη για να απογειώσει την παραγωγικότητά σου απευθείας από τη συσκευή σου.
         </p>
         
         <div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
-          <a href="#solutions" class="px-8 py-4 rounded-full bg-white text-slate-950 font-bold hover:bg-slate-200 transition-colors">
+          <a href="#solutions" class="px-8 py-4 rounded-2xl md:rounded-full bg-white text-slate-950 font-bold hover:bg-slate-200 transition-colors shadow-lg shadow-white/5">
             Ξεκινήστε δωρεάν
           </a>
-          <a href="#solutions" class="px-8 py-4 rounded-full bg-transparent text-white font-bold border border-slate-700 hover:bg-slate-800 transition-colors">
+          <a href="#solutions" class="px-8 py-4 rounded-2xl md:rounded-full bg-transparent text-white font-bold border border-slate-700 hover:bg-slate-800 transition-colors">
             Δείτε το Demo
           </a>
         </div>
       </section>
 
       <!-- INTERACTIVE DEMO / TABS SECTION -->
-      <section id="solutions" class="max-w-7xl mx-auto px-6 py-24 border-t border-slate-900">
-        <div class="text-center mb-16">
-          <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Δοκιμάστε τις Λύσεις μας</h2>
-          <p class="text-slate-400">Επιλέξτε μια κατηγορία για να δείτε ζωντανά παραδείγματα (demo data).</p>
+      <section id="solutions" class="max-w-7xl mx-auto px-6 py-16 md:py-24 border-t border-slate-900">
+        <div class="text-center mb-12">
+          <h2 class="text-2xl md:text-4xl font-bold text-white mb-3">Δοκιμάστε τις Λύσεις μας</h2>
+          <p class="text-slate-400 text-sm md:text-base">Επιλέξτε μια κατηγορία για να δείτε ζωντανά δεδομένα.</p>
         </div>
 
         <!-- Tab Buttons -->
-        <div class="flex flex-wrap justify-center gap-3 mb-12">
-          <button class="tab-btn px-6 py-3 rounded-full text-sm font-semibold transition-all bg-purple-600 text-white shadow-lg shadow-purple-600/20" data-target="tab-1">
+        <div class="flex flex-wrap justify-center gap-2 md:gap-3 mb-8">
+          <button class="tab-btn px-5 py-2.5 rounded-xl md:rounded-full text-xs md:text-sm font-semibold transition-all bg-purple-600 text-white shadow-lg shadow-purple-600/20" data-target="tab-1">
             🤖 AI Automation
           </button>
-          <button class="tab-btn px-6 py-3 rounded-full text-sm font-semibold transition-all bg-slate-900 text-slate-400 border border-slate-800 hover:text-white" data-target="tab-2">
-            ⚡ Cloud Infrastructure
+          <button class="tab-btn px-5 py-2.5 rounded-xl md:rounded-full text-xs md:text-sm font-semibold transition-all bg-slate-900 text-slate-400 border border-slate-800 hover:text-white" data-target="tab-2">
+            ⚡ Cloud Infra
           </button>
-          <button class="tab-btn px-6 py-3 rounded-full text-sm font-semibold transition-all bg-slate-900 text-slate-400 border border-slate-800 hover:text-white" data-target="tab-3">
-            🔒 Security & Analytics
+          <button class="tab-btn px-5 py-2.5 rounded-xl md:rounded-full text-xs md:text-sm font-semibold transition-all bg-slate-900 text-slate-400 border border-slate-800 hover:text-white" data-target="tab-3">
+            🔒 Security
           </button>
         </div>
 
         <!-- Tab Content Display Box -->
-        <div class="max-w-4xl mx-auto rounded-3xl bg-slate-900/80 border border-slate-800 p-8 md:p-12 backdrop-blur-xl shadow-2xl">
+        <div class="max-w-4xl mx-auto rounded-3xl bg-slate-900/80 border border-slate-800 p-6 md:p-12 backdrop-blur-xl shadow-2xl">
           
           <!-- Tab 1 -->
-          <div id="tab-1" class="tab-content space-y-6">
+          <div id="tab-1" class="tab-content space-y-4 md:space-y-6">
             <div class="flex items-center gap-3">
-              <span class="px-3 py-1 rounded-full bg-purple-500/10 text-purple-400 text-xs font-bold uppercase tracking-wider">Demo Mode</span>
-              <span class="text-slate-500 text-sm">Status: Active & Optimized</span>
+              <span class="px-3 py-1 rounded-full bg-purple-500/10 text-purple-400 text-xs font-bold uppercase tracking-wider">App Demo</span>
+              <span class="text-slate-500 text-xs md:text-sm">Status: Active</span>
             </div>
-            <h3 class="text-2xl md:text-3xl font-bold text-white">Αυτόματη Διαχείριση Ροών Εργασίας</h3>
-            <p class="text-slate-300 leading-relaxed">
-              «Το σύστημα επεξεργάζεται αιτήματα σε πραγματικό χρόνο, μειώνοντας τον χρόνο απόκρισης κατά <strong>74%</strong>. Δημιουργούνται αυτόματα αναφορές διάγνωσης και προτάσεις βελτιστοποίησης.»
+            <h3 class="text-xl md:text-3xl font-bold text-white">Αυτόματη Διαχείριση Ροών</h3>
+            <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+              «Το σύστημα επεξεργάζεται αιτήματα σε πραγματικό χρόνο, μειώνοντας τον χρόνο απόκρισης κατά <strong>74%</strong>.»
             </p>
-            <div class="p-4 rounded-2xl bg-slate-950 border border-slate-800 font-mono text-xs text-purple-300">
-              [SYSTEM_LOG] AI Model loaded successfully. Token usage: 1,240 / Sec. Latency: 12ms.
+            <div class="p-3 md:p-4 rounded-2xl bg-slate-950 border border-slate-800 font-mono text-[11px] md:text-xs text-purple-300 overflow-x-auto">
+              [SYSTEM_LOG] AI Model running. Latency: 12ms.
             </div>
           </div>
 
           <!-- Tab 2 -->
-          <div id="tab-2" class="tab-content hidden space-y-6">
+          <div id="tab-2" class="tab-content hidden space-y-4 md:space-y-6">
             <div class="flex items-center gap-3">
-              <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs font-bold uppercase tracking-wider">Demo Mode</span>
-              <span class="text-slate-500 text-sm">Status: Edge Network Deployed</span>
+              <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs font-bold uppercase tracking-wider">App Demo</span>
+              <span class="text-slate-500 text-xs md:text-sm">Status: Edge Online</span>
             </div>
-            <h3 class="text-2xl md:text-3xl font-bold text-white">Αστραπιαία Παράδοση μέσω Cloudflare</h3>
-            <p class="text-slate-300 leading-relaxed">
-              «Η αρχιτεκτονική κατανέμει το περιεχόμενο σε εκατοντάδες servers παγκοσμίως (Edge Computing), εξασφαλίζοντας μηδενικό downtime και instant φόρτωση από οποιοδήποτε σημείο του πλανήτη.»
+            <h3 class="text-xl md:text-3xl font-bold text-white">Cloudflare Edge Computing</h3>
+            <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+              «Αρχιτεκτονική κατανεμημένης μνήμης για μηδενικό downtime και instant απόκριση σε κινητά.»
             </p>
-            <div class="p-4 rounded-2xl bg-slate-950 border border-slate-800 font-mono text-xs text-blue-300">
-              [EDGE_CACHE] Region: Frankfurt/Athens. Hit Rate: 99.8%. TTFB: 24ms.
+            <div class="p-3 md:p-4 rounded-2xl bg-slate-950 border border-slate-800 font-mono text-[11px] md:text-xs text-blue-300 overflow-x-auto">
+              [EDGE_CACHE] Hit Rate: 99.8%. TTFB: 24ms.
             </div>
           </div>
 
           <!-- Tab 3 -->
-          <div id="tab-3" class="tab-content hidden space-y-6">
+          <div id="tab-3" class="tab-content hidden space-y-4 md:space-y-6">
             <div class="flex items-center gap-3">
-              <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-bold uppercase tracking-wider">Demo Mode</span>
-              <span class="text-slate-500 text-sm">Status: Shield Protection On</span>
+              <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-bold uppercase tracking-wider">App Demo</span>
+              <span class="text-slate-500 text-xs md:text-sm">Status: Protected</span>
             </div>
-            <h3 class="text-2xl md:text-3xl font-bold text-white">Προηγμένη Θωράκιση Δεδομένων</h3>
-            <p class="text-slate-300 leading-relaxed">
-              «Εφαρμογή πρωτοκόλλων κρυπτογράφησης επόμενης γενιάς, με αυτόματο εντοπισμό ανωμαλιών στην κυκλοφορία και άμεσο αποκλεισμό κακόβουλων προσπαθειών.»
+            <h3 class="text-xl md:text-3xl font-bold text-white">Θωράκιση Δεδομένων</h3>
+            <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+              «Πρωτόκολλα κρυπτογράφησης υψηλού επιπέδου για απόλυτη ασφάλεια σε mobile περιβάλλοντα.»
             </p>
-            <div class="p-4 rounded-2xl bg-slate-950 border border-slate-800 font-mono text-xs text-emerald-300">
-              [SECURITY_WALL] Zero vulnerabilities detected. SSL/TLS 1.3 active. Firewall rules: 42 applied.
+            <div class="p-3 md:p-4 rounded-2xl bg-slate-950 border border-slate-800 font-mono text-[11px] md:text-xs text-emerald-300 overflow-x-auto">
+              [SECURITY] SSL/TLS 1.3 active. Zero threats.
             </div>
           </div>
 
@@ -156,80 +145,65 @@ import '../styles/global.css';
       </section>
 
       <!-- Features Section -->
-      <section id="features" class="max-w-7xl mx-auto px-6 py-24 border-t border-slate-900">
-        <div class="text-center mb-16">
-          <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Γιατί να μας επιλέξετε;</h2>
-          <p class="text-slate-400">Όλα τα εργαλεία που χρειάζεστε, σε ένα μέρος.</p>
+      <section id="features" class="max-w-7xl mx-auto px-6 py-16 md:py-24 border-t border-slate-900">
+        <div class="text-center mb-12">
+          <h2 class="text-2xl md:text-4xl font-bold text-white mb-3">Χαρακτηριστικά</h2>
+          <p class="text-slate-400 text-sm md:text-base">Σχεδιασμένο πρώτα για κινητές συσκευές (Mobile-First).</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="p-8 rounded-3xl bg-slate-900 border border-slate-800 hover:border-purple-500/50 transition-colors group">
-            <div class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-              <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-3">Αστραπιαία Ταχύτητα</h3>
-            <p class="text-slate-400 text-sm leading-relaxed">Χτισμένο με Astro και Cloudflare Pages για μηδενικούς χρόνους αναμονής.</p>
+          <div class="p-6 md:p-8 rounded-3xl bg-slate-900 border border-slate-800">
+            <h3 class="text-lg md:text-xl font-bold text-white mb-2">⚡ PWA Ready</h3>
+            <p class="text-slate-400 text-sm">Προσθέστε το στην αρχική οθόνη του κινητού σας σαν κανονικό app.</p>
           </div>
-
-          <div class="p-8 rounded-3xl bg-slate-900 border border-slate-800 hover:border-blue-500/50 transition-colors group">
-            <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-              <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-3">Απόλυτη Ασφάλεια</h3>
-            <p class="text-slate-400 text-sm leading-relaxed">Δεδομένα κρυπτογραφημένα και προστατευμένα με σύγχρονες προδιαγραφές.</p>
+          <div class="p-6 md:p-8 rounded-3xl bg-slate-900 border border-slate-800">
+            <h3 class="text-lg md:text-xl font-bold text-white mb-2">🔒 Secure Auth</h3>
+            <p class="text-slate-400 text-sm">Ασφαλείς συνδέσεις και κρυπτογραφημένα tokens.</p>
           </div>
-
-          <div class="p-8 rounded-3xl bg-slate-900 border border-slate-800 hover:border-purple-500/50 transition-colors group">
-            <div class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-              <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8-4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path></svg>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-3">Ευέλικτη Βάση</h3>
-            <p class="text-slate-400 text-sm leading-relaxed">Σχεδιασμένο για να προσαρμόζεται εύκολα στις δικές σου ανάγκες.</p>
+          <div class="p-6 md:p-8 rounded-3xl bg-slate-900 border border-slate-800">
+            <h3 class="text-lg md:text-xl font-bold text-white mb-2">🚀 Native Feel</h3>
+            <p class="text-slate-400 text-sm">Ομαλές μεταβάσεις και γρήγορη απόκριση αφής.</p>
           </div>
         </div>
       </section>
 
     </main>
 
-    <!-- Footer -->
-    <footer class="border-t border-slate-900 py-12">
-      <div class="max-w-7xl mx-auto px-6 text-center text-slate-500 text-sm">
-        <p>&copy; 2026 NetKappa. Με επιφύλαξη παντός δικαιώματος.</p>
-      </div>
-    </footer>
+    <!-- MOBILE APP BOTTOM NAVIGATION BAR (Visible only on mobile) -->
+    <div class="md:hidden fixed bottom-0 left-0 right-0 bg-slate-950/90 backdrop-blur-lg border-t border-slate-800 px-6 py-3 flex justify-around items-center z-50">
+      <a href="#" class="flex flex-col items-center text-purple-400 text-[10px] font-medium gap-1">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+        <span>Home</span>
+      </a>
+      <a href="#solutions" class="flex flex-col items-center text-slate-400 hover:text-white text-[10px] font-medium gap-1">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+        <span>Solutions</span>
+      </a>
+      <a href="#features" class="flex flex-col items-center text-slate-400 hover:text-white text-[10px] font-medium gap-1">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+        <span>Features</span>
+      </a>
+    </div>
 
-    <!-- Scripts για Mobile Menu & Interactive Tabs -->
+    <!-- Scripts -->
     <script>
-      // Mobile menu toggle
-      const btn = document.getElementById('menu-btn');
-      const menu = document.getElementById('mobile-menu');
-
-      btn?.addEventListener('click', () => {
-        menu?.classList.toggle('hidden');
-      });
-
-      // Interactive Tabs Logic
       const tabBtns = document.querySelectorAll('.tab-btn');
       const tabContents = document.querySelectorAll('.tab-content');
 
       tabBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-          // Remove active styles from all buttons
           tabBtns.forEach(b => {
             b.classList.remove('bg-purple-600', 'text-white', 'shadow-lg', 'shadow-purple-600/20');
             b.classList.add('bg-slate-900', 'text-slate-400', 'border', 'border-slate-800');
           });
 
-          // Add active styles to clicked button
           btn.classList.remove('bg-slate-900', 'text-slate-400', 'border', 'border-slate-800');
           btn.classList.add('bg-purple-600', 'text-white', 'shadow-lg', 'shadow-purple-600/20');
 
-          // Hide all contents
           tabContents.forEach(content => {
             content.classList.add('hidden');
           });
 
-          // Show target content
           const targetId = btn.getAttribute('data-target');
           const targetContent = document.getElementById(targetId);
           targetContent?.classList.remove('hidden');
